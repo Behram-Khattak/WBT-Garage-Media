@@ -1,7 +1,16 @@
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&display=swap');
 @import "tailwindcss";
 @import "tw-animate-css";
 @plugin "@tailwindcss/typography";
+
+@font-face {
+  font-family: 'Theater';
+  src: url('/fonts/Theaterv04_Bold.ttf') format('truetype'),
+       url('/fonts/Theater_Bold.otf') format('opentype');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
 
 @custom-variant dark (&:is(.dark *));
 
@@ -104,7 +113,7 @@
   --chart-5: 220 4% 82%;
 
   --app-font-sans: 'Outfit', sans-serif;
-  --app-font-serif: 'Playfair Display', serif;
+  --app-font-serif: 'Theater', 'Outfit', sans-serif;
   --app-font-mono: Menlo, monospace;
   --radius: 0rem;
   
