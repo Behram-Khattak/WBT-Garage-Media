@@ -22,13 +22,23 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       <header
         className={cn(
           "fixed top-0 w-full z-50 transition-all duration-500 ease-in-out flex flex-col items-center",
-          isScrolled
-            ? "bg-background/90 backdrop-blur-md border-b border-white/8 py-3 gap-2"
-            : "bg-transparent py-5 gap-2.5"
+          isHome && !isScrolled
+            ? "bg-transparent py-5 gap-2.5"
+            : "bg-background/95 backdrop-blur-md border-b border-border py-3 gap-2"
         )}
       >
-        <Link href="/" className="font-serif text-2xl font-bold tracking-widest text-white hover:text-accent transition-colors">
-          WBT GARAGE
+        <Link href="/" className="flex items-center gap-3 group">
+          <img
+            src="/wbt-logo.png"
+            alt="WBT Garage"
+            className="w-9 h-9 rounded-full object-cover transition-opacity duration-300 group-hover:opacity-80"
+          />
+          <span className={cn(
+            "font-serif text-xl font-bold tracking-widest transition-colors duration-300 group-hover:opacity-70",
+            isHome && !isScrolled ? "text-white" : "text-foreground"
+          )}>
+            WBT GARAGE
+          </span>
         </Link>
         <nav className="hidden md:flex items-center gap-2 text-xs uppercase tracking-widest">
           {[
@@ -42,10 +52,16 @@ export default function Layout({ children }: { children: React.ReactNode }) {
               key={href}
               href={href}
               className={cn(
-                "px-4 py-1.5 rounded-full border transition-all duration-300 hover:text-accent hover:border-accent",
-                location === href
-                  ? "text-accent border-accent"
-                  : "text-white/60 border-white/20"
+                "px-4 py-1.5 rounded-full border transition-all duration-300",
+                isHome && !isScrolled
+                  ? cn(
+                      "hover:text-white hover:border-white/60",
+                      location === href ? "text-white border-white/50" : "text-white/50 border-white/20"
+                    )
+                  : cn(
+                      "hover:text-foreground hover:border-foreground/50",
+                      location === href ? "text-foreground border-foreground/60" : "text-foreground/50 border-border"
+                    )
               )}
             >
               {label}

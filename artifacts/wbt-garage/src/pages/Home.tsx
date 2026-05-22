@@ -36,10 +36,10 @@ export default function Home() {
             <p className="text-xs uppercase tracking-[0.4em] text-white/40 font-sans">
               Issue No. 01 — Private Collections
             </p>
-            <h1 className="font-serif text-6xl md:text-7xl lg:text-8xl font-bold leading-[0.9] tracking-tighter text-accent">
+            <h1 className="font-serif text-6xl md:text-7xl lg:text-8xl font-bold leading-[0.9] tracking-tighter text-white">
               EMOTIONAL<br/>MACHINES
             </h1>
-            <div className="w-16 h-px bg-accent/60" />
+            <div className="w-16 h-px bg-white/50" />
             <p className="text-white/60 text-lg leading-relaxed max-w-md font-sans">
               Exploring rare and collectible cars as cultural icons, emotional machines, and engineering masterpieces — through access to private collections and cinematic storytelling.
             </p>
@@ -153,7 +153,7 @@ export default function Home() {
               {["Heritage", "Restoration", "Cinematic", "Rare Finds", "Private Collections", "Engineering", "Speed & Legacy", "Collector's Edition"].map((tag, i) => (
                 <span key={i} className="flex items-center gap-6 px-6">
                   <span className="text-xs uppercase tracking-[0.35em] text-white/60 font-sans">{tag}</span>
-                  <span className="text-accent text-lg leading-none">✦</span>
+                  <span className="text-white/30 text-lg leading-none">✦</span>
                 </span>
               ))}
             </div>
@@ -163,7 +163,7 @@ export default function Home() {
 
       {/* Manifesto */}
       <section className="py-32 md:py-48 px-8 bg-background relative overflow-hidden">
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-px h-32 bg-gradient-to-b from-transparent to-white/10" />
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-px h-32 bg-gradient-to-b from-transparent to-foreground/10" />
         <div className="max-w-4xl mx-auto text-center relative z-10">
           <motion.h2 
             initial={{ opacity: 0, y: 20 }}
@@ -187,11 +187,11 @@ export default function Home() {
       </section>
 
       {/* Featured Stories */}
-      <section className="py-24 px-8 bg-[#0a0a0a]">
+      <section className="py-24 px-8 bg-[#0d0f14]">
         <div className="max-w-7xl mx-auto">
           <div className="flex justify-between items-end mb-16">
-            <h2 className="font-serif text-4xl md:text-5xl">Featured Stories</h2>
-            <Link href="/gallery" className="hidden md:inline-block text-accent uppercase tracking-widest text-xs hover:text-white transition-colors border-b border-accent pb-1">View All</Link>
+            <h2 className="font-serif text-4xl md:text-5xl text-white">Featured Stories</h2>
+            <Link href="/gallery" className="hidden md:inline-block text-white/50 uppercase tracking-widest text-xs hover:text-white transition-colors border-b border-white/20 hover:border-white/60 pb-1">View All</Link>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -212,8 +212,8 @@ export default function Home() {
                     className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700 ease-out"
                   />
                 </div>
-                <p className="text-accent uppercase tracking-widest text-xs mb-3">{story.category}</p>
-                <h3 className="font-serif text-2xl group-hover:text-accent transition-colors">{story.title}</h3>
+                <p className="text-white/40 uppercase tracking-widest text-xs mb-3">{story.category}</p>
+                <h3 className="font-serif text-2xl text-white group-hover:text-white/60 transition-colors">{story.title}</h3>
               </motion.div>
             ))}
           </div>
@@ -247,7 +247,7 @@ export default function Home() {
             </p>
             <Link 
               href="/media" 
-              className="inline-block border-b border-white/20 pb-2 uppercase tracking-widest text-sm hover:border-accent hover:text-accent transition-colors mt-8"
+              className="inline-block border-b border-foreground/20 pb-2 uppercase tracking-widest text-sm hover:border-foreground hover:text-foreground transition-colors mt-8"
             >
               Watch Now
             </Link>
