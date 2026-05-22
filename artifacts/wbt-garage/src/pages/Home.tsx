@@ -22,9 +22,9 @@ const featuredStories = [
 export default function Home() {
   return (
     <div className="w-full">
-      {/* Hero Section — Magazine Two-Column */}
-      <section className="min-h-screen bg-white flex items-stretch pt-24">
-        <div className="w-full max-w-7xl mx-auto px-8 flex flex-col md:flex-row items-center gap-12 py-16">
+      {/* Hero Section — Smoky Wall */}
+      <section className="hero-wall min-h-screen flex items-stretch pt-24">
+        <div className="w-full max-w-7xl mx-auto px-8 flex flex-col md:flex-row items-center gap-16 py-20">
 
           {/* Left — Editorial Content */}
           <motion.div
@@ -33,68 +33,69 @@ export default function Home() {
             transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
             className="w-full md:w-1/2 flex flex-col justify-center gap-8"
           >
-            <p className="text-xs uppercase tracking-[0.4em] text-neutral-400 font-sans">
+            <p className="text-xs uppercase tracking-[0.4em] text-white/40 font-sans">
               Issue No. 01 — Private Collections
             </p>
             <h1 className="font-serif text-6xl md:text-7xl lg:text-8xl font-bold leading-[0.9] tracking-tighter text-accent">
               EMOTIONAL<br/>MACHINES
             </h1>
-            <div className="w-16 h-px bg-accent" />
-            <p className="text-neutral-600 text-lg leading-relaxed max-w-md font-sans">
+            <div className="w-16 h-px bg-accent/60" />
+            <p className="text-white/60 text-lg leading-relaxed max-w-md font-sans">
               Exploring rare and collectible cars as cultural icons, emotional machines, and engineering masterpieces — through access to private collections and cinematic storytelling.
             </p>
             <div className="flex items-center gap-6 pt-2">
               <Link
                 href="/gallery"
-                className="text-xs uppercase tracking-[0.3em] text-neutral-900 border-b border-neutral-900 pb-1 hover:text-accent hover:border-accent transition-colors duration-300"
+                className="text-xs uppercase tracking-[0.3em] text-white/80 border-b border-white/40 pb-1 hover:text-accent hover:border-accent transition-colors duration-300"
               >
                 Explore the Collection
               </Link>
-              <span className="text-neutral-300 text-lg">—</span>
+              <span className="text-white/20 text-lg">—</span>
               <Link
                 href="/about"
-                className="text-xs uppercase tracking-[0.3em] text-neutral-400 border-b border-neutral-300 pb-1 hover:text-accent hover:border-accent transition-colors duration-300"
+                className="text-xs uppercase tracking-[0.3em] text-white/40 border-b border-white/20 pb-1 hover:text-accent hover:border-accent transition-colors duration-300"
               >
                 Our Story
               </Link>
             </div>
-            <p className="text-xs uppercase tracking-widest text-neutral-400 font-sans mt-4">
+            <p className="text-xs uppercase tracking-widest text-white/30 font-sans mt-4">
               By Volodymyr Nosov — WBT Garage
             </p>
           </motion.div>
 
-          {/* Right — Magazine-Ad Style Car Photo */}
+          {/* Right — Poster on Wall */}
           <motion.div
-            initial={{ opacity: 0, x: 40 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 1, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-            className="w-full md:w-1/2 flex justify-center items-center"
+            initial={{ opacity: 0, x: 40, rotate: -3 }}
+            animate={{ opacity: 1, x: 0, rotate: -1.5 }}
+            transition={{ duration: 1.1, delay: 0.25, ease: [0.16, 1, 0.3, 1] }}
+            className="w-full md:w-1/2 flex justify-center items-center py-12"
           >
-            <div className="relative w-full max-w-md">
-              {/* Outer accent border offset */}
-              <div className="absolute -top-4 -right-4 w-full h-full border-2 border-accent z-0" />
-              {/* Inner frame */}
-              <div className="relative z-10 border-4 border-neutral-900 overflow-hidden">
-                {/* Magazine header bar */}
-                <div className="bg-accent px-5 py-2 flex items-center justify-between">
-                  <span className="font-serif text-xs tracking-[0.3em] uppercase text-neutral-900 font-bold">WBT Garage</span>
-                  <span className="text-[10px] uppercase tracking-widest text-neutral-900/70">Private Edition</span>
-                </div>
-                {/* Car image */}
-                <div className="aspect-[3/4] overflow-hidden">
+            <div className="poster-shadow" style={{ transform: 'rotate(-1.5deg)' }}>
+              {/* Tape strip top-left */}
+              <div
+                className="tape absolute w-14 h-5 z-20 rounded-sm"
+                style={{ top: '-10px', left: '28px', transform: 'rotate(-2deg)' }}
+              />
+              {/* Tape strip top-right */}
+              <div
+                className="tape absolute w-14 h-5 z-20 rounded-sm"
+                style={{ top: '-8px', right: '36px', transform: 'rotate(3deg)' }}
+              />
+              {/* White photo border — like a printed poster */}
+              <div className="relative bg-white p-3 pb-10" style={{ maxWidth: '380px' }}>
+                <div className="aspect-[2/3] overflow-hidden">
                   <img
                     src="https://images.unsplash.com/photo-1544829099-b9a0c07fad1a?auto=format&fit=crop&q=80&w=800"
                     alt="Rare collectible car"
                     className="w-full h-full object-cover"
+                    style={{ filter: 'contrast(1.05) saturate(0.9)' }}
                   />
                 </div>
-                {/* Magazine footer bar */}
-                <div className="bg-neutral-900 px-5 py-3">
-                  <p className="font-serif text-white text-sm italic">"Where speed meets legacy."</p>
+                {/* Caption strip */}
+                <div className="pt-3 text-center">
+                  <p className="font-serif text-neutral-800 text-xs tracking-widest uppercase">WBT Garage — Private Collection</p>
                 </div>
               </div>
-              {/* Bottom-left small accent square */}
-              <div className="absolute -bottom-4 -left-4 w-12 h-12 bg-accent z-0" />
             </div>
           </motion.div>
 

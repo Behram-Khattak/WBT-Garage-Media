@@ -156,3 +156,37 @@
 .animate-ticker {
   animation: ticker 22s linear infinite;
 }
+
+.hero-wall {
+  position: relative;
+  background-color: #1a1917;
+  background-image:
+    radial-gradient(ellipse at 15% 60%, rgba(80, 70, 55, 0.35) 0%, transparent 55%),
+    radial-gradient(ellipse at 85% 20%, rgba(50, 45, 38, 0.4) 0%, transparent 50%),
+    radial-gradient(ellipse at 50% 100%, rgba(10, 8, 6, 0.6) 0%, transparent 60%);
+}
+
+.hero-wall::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.08'/%3E%3C/svg%3E");
+  background-size: 300px 300px;
+  pointer-events: none;
+  z-index: 1;
+  mix-blend-mode: overlay;
+}
+
+.hero-wall > * {
+  position: relative;
+  z-index: 2;
+}
+
+.poster-shadow {
+  filter: drop-shadow(4px 12px 28px rgba(0,0,0,0.8)) drop-shadow(0px 2px 6px rgba(0,0,0,0.6));
+}
+
+.tape {
+  background: linear-gradient(135deg, rgba(255,245,180,0.85) 0%, rgba(230,220,140,0.75) 100%);
+  backdrop-filter: blur(1px);
+}
