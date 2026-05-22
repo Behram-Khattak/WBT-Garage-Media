@@ -68,40 +68,40 @@
 }
 
 :root {
-  --background: 0 0% 5%;
-  --foreground: 0 0% 95%;
-  --border: 0 0% 15%;
-  --card: 0 0% 8%;
-  --card-foreground: 0 0% 95%;
-  --card-border: 0 0% 15%;
-  --sidebar: 0 0% 8%;
-  --sidebar-foreground: 0 0% 95%;
-  --sidebar-border: 0 0% 15%;
-  --sidebar-primary: 43 100% 50%;
+  --background: 0 0% 4%;
+  --foreground: 0 0% 96%;
+  --border: 0 0% 14%;
+  --card: 0 0% 7%;
+  --card-foreground: 0 0% 96%;
+  --card-border: 0 0% 14%;
+  --sidebar: 0 0% 7%;
+  --sidebar-foreground: 0 0% 96%;
+  --sidebar-border: 0 0% 14%;
+  --sidebar-primary: 0 0% 100%;
   --sidebar-primary-foreground: 0 0% 0%;
-  --sidebar-accent: 0 0% 15%;
-  --sidebar-accent-foreground: 0 0% 95%;
-  --sidebar-ring: 43 100% 50%;
-  --popover: 0 0% 8%;
-  --popover-foreground: 0 0% 95%;
-  --popover-border: 0 0% 15%;
-  --primary: 43 100% 50%;
+  --sidebar-accent: 0 0% 14%;
+  --sidebar-accent-foreground: 0 0% 96%;
+  --sidebar-ring: 0 0% 100%;
+  --popover: 0 0% 7%;
+  --popover-foreground: 0 0% 96%;
+  --popover-border: 0 0% 14%;
+  --primary: 0 0% 100%;
   --primary-foreground: 0 0% 0%;
-  --secondary: 0 0% 15%;
-  --secondary-foreground: 0 0% 95%;
-  --muted: 0 0% 15%;
-  --muted-foreground: 0 0% 65%;
-  --accent: 43 100% 50%;
+  --secondary: 0 0% 14%;
+  --secondary-foreground: 0 0% 96%;
+  --muted: 0 0% 14%;
+  --muted-foreground: 0 0% 60%;
+  --accent: 0 0% 100%;
   --accent-foreground: 0 0% 0%;
   --destructive: 0 84% 60%;
   --destructive-foreground: 0 0% 98%;
-  --input: 0 0% 15%;
-  --ring: 43 100% 50%;
-  --chart-1: 43 100% 50%;
+  --input: 0 0% 14%;
+  --ring: 0 0% 100%;
+  --chart-1: 0 0% 100%;
   --chart-2: 0 0% 20%;
-  --chart-3: 0 0% 30%;
-  --chart-4: 0 0% 40%;
-  --chart-5: 0 0% 50%;
+  --chart-3: 0 0% 35%;
+  --chart-4: 0 0% 50%;
+  --chart-5: 0 0% 65%;
 
   --app-font-sans: 'Outfit', sans-serif;
   --app-font-serif: 'Playfair Display', serif;
@@ -159,11 +159,11 @@
 
 .hero-wall {
   position: relative;
-  background-color: #1a1917;
+  background-color: #0a0a0a;
   background-image:
-    radial-gradient(ellipse at 15% 60%, rgba(80, 70, 55, 0.35) 0%, transparent 55%),
-    radial-gradient(ellipse at 85% 20%, rgba(50, 45, 38, 0.4) 0%, transparent 50%),
-    radial-gradient(ellipse at 50% 100%, rgba(10, 8, 6, 0.6) 0%, transparent 60%);
+    radial-gradient(ellipse at 15% 60%, rgba(40, 40, 40, 0.5) 0%, transparent 55%),
+    radial-gradient(ellipse at 85% 20%, rgba(28, 28, 28, 0.6) 0%, transparent 50%),
+    radial-gradient(ellipse at 50% 100%, rgba(0, 0, 0, 0.8) 0%, transparent 60%);
 }
 
 .hero-wall::before {
@@ -187,6 +187,6 @@
 }
 
 .tape {
-  background: linear-gradient(135deg, rgba(255,245,180,0.85) 0%, rgba(230,220,140,0.75) 100%);
+  background: linear-gradient(135deg, rgba(210,210,210,0.7) 0%, rgba(180,180,180,0.55) 100%);
   backdrop-filter: blur(1px);
 }
