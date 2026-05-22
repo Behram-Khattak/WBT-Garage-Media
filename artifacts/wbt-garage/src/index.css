@@ -168,22 +168,22 @@
 
 .hero-wall {
   position: relative;
-  background-color: #0a0a0a;
+  background-color: #f5f4f0;
   background-image:
-    radial-gradient(ellipse at 15% 60%, rgba(40, 40, 40, 0.5) 0%, transparent 55%),
-    radial-gradient(ellipse at 85% 20%, rgba(28, 28, 28, 0.6) 0%, transparent 50%),
-    radial-gradient(ellipse at 50% 100%, rgba(0, 0, 0, 0.8) 0%, transparent 60%);
+    radial-gradient(ellipse at 15% 60%, rgba(200, 195, 185, 0.35) 0%, transparent 55%),
+    radial-gradient(ellipse at 85% 20%, rgba(210, 205, 195, 0.3) 0%, transparent 50%),
+    radial-gradient(ellipse at 50% 100%, rgba(180, 175, 165, 0.25) 0%, transparent 60%);
 }
 
 .hero-wall::before {
   content: '';
   position: absolute;
   inset: 0;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.08'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
   background-size: 300px 300px;
   pointer-events: none;
   z-index: 1;
-  mix-blend-mode: overlay;
+  mix-blend-mode: multiply;
 }
 
 .hero-wall > * {

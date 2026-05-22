@@ -33,32 +33,32 @@ export default function Home() {
             transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
             className="w-full md:w-1/2 flex flex-col justify-center gap-8"
           >
-            <p className="text-xs uppercase tracking-[0.4em] text-white/40 font-sans">
+            <p className="text-xs uppercase tracking-[0.4em] text-black/35 font-sans">
               Issue No. 01 — Private Collections
             </p>
-            <h1 className="font-serif text-6xl md:text-7xl lg:text-8xl font-bold leading-[0.9] tracking-tighter text-white">
+            <h1 className="font-serif text-6xl md:text-7xl lg:text-8xl font-bold leading-[0.9] tracking-tighter text-black">
               EMOTIONAL<br/>MACHINES
             </h1>
-            <div className="w-16 h-px bg-white/50" />
-            <p className="text-white/60 text-lg leading-relaxed max-w-md font-sans">
+            <div className="w-16 h-px bg-black/30" />
+            <p className="text-black/55 text-lg leading-relaxed max-w-md font-sans">
               Exploring rare and collectible cars as cultural icons, emotional machines, and engineering masterpieces — through access to private collections and cinematic storytelling.
             </p>
             <div className="flex items-center gap-6 pt-2">
               <Link
                 href="/gallery"
-                className="text-xs uppercase tracking-[0.3em] text-white/80 border-b border-white/40 pb-1 hover:text-accent hover:border-accent transition-colors duration-300"
+                className="text-xs uppercase tracking-[0.3em] text-black/70 border-b border-black/30 pb-1 hover:text-black hover:border-black transition-colors duration-300"
               >
                 Explore the Collection
               </Link>
-              <span className="text-white/20 text-lg">—</span>
+              <span className="text-black/20 text-lg">—</span>
               <Link
                 href="/about"
-                className="text-xs uppercase tracking-[0.3em] text-white/40 border-b border-white/20 pb-1 hover:text-accent hover:border-accent transition-colors duration-300"
+                className="text-xs uppercase tracking-[0.3em] text-black/35 border-b border-black/15 pb-1 hover:text-black hover:border-black/40 transition-colors duration-300"
               >
                 Our Story
               </Link>
             </div>
-            <p className="text-xs uppercase tracking-widest text-white/30 font-sans mt-4">
+            <p className="text-xs uppercase tracking-widest text-black/25 font-sans mt-4">
               By Volodymyr Nosov — WBT Garage
             </p>
           </motion.div>
