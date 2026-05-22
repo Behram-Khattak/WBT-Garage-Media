@@ -3,149 +3,93 @@ import { Link } from "wouter";
 
 const featuredStories = [
   {
+    issue: "01",
     title: "The Ghost of Le Mans",
     category: "Heritage",
-    image: "https://images.unsplash.com/photo-1544829099-b9a0c07fad1a?auto=format&fit=crop&q=80&w=1000"
+    image: "https://images.unsplash.com/photo-1544829099-b9a0c07fad1a?auto=format&fit=crop&q=80&w=1200",
+    desc: "Racing ghosts and the machines they left behind."
   },
   {
+    issue: "02",
     title: "Engineering Obsession",
     category: "Restoration",
-    image: "https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&q=80&w=1000"
+    image: "https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&q=80&w=800",
+    desc: "Inside the workshop where masterpieces are reborn."
   },
   {
+    issue: "03",
     title: "Midnight Drive",
     category: "Cinematic",
-    image: "https://images.unsplash.com/photo-1611821064430-0d40221e4e03?auto=format&fit=crop&q=80&w=1000"
+    image: "https://images.unsplash.com/photo-1611821064430-0d40221e4e03?auto=format&fit=crop&q=80&w=800",
+    desc: "When the city sleeps, the machines come alive."
   }
 ];
 
 export default function Home() {
   return (
     <div className="w-full">
-      {/* Hero Section — Smoky Wall */}
-      <section className="hero-wall min-h-screen flex items-stretch pt-24">
-        <div className="w-full max-w-7xl mx-auto px-8 flex flex-col md:flex-row items-center gap-16 py-20">
 
-          {/* Left — Editorial Content */}
+      {/* ── Hero ── */}
+      <section className="relative min-h-screen flex flex-col overflow-hidden bg-black pt-[88px]">
+
+        {/* Full-bleed car image */}
+        <div className="absolute inset-0 z-0">
+          <img
+            src="https://images.unsplash.com/photo-1580273916550-e323be2ae537?auto=format&fit=crop&q=90&w=1800"
+            alt="Collector car"
+            className="w-full h-full object-cover object-center opacity-60"
+            style={{ filter: 'grayscale(0.3) contrast(1.1)' }}
+          />
+          {/* Left fade so text is readable */}
+          <div className="absolute inset-0 bg-gradient-to-r from-black via-black/70 to-transparent" />
+          {/* Bottom fade */}
+          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
+        </div>
+
+        {/* Content */}
+        <div className="relative z-10 flex-1 flex flex-col justify-between px-8 md:px-16 py-12">
+
+          {/* Main text */}
           <motion.div
-            initial={{ opacity: 0, x: -40 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
-            className="w-full md:w-1/2 flex flex-col justify-center gap-8"
+            initial={{ opacity: 0, y: 40 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1.1, ease: [0.16, 1, 0.3, 1] }}
+            className="max-w-2xl mt-8"
           >
-            <p className="text-xs uppercase tracking-[0.4em] text-black/35 font-sans">
-              Issue No. 01 — Private Collections
-            </p>
-            <h1 className="font-serif text-6xl md:text-7xl lg:text-8xl font-bold leading-[0.9] tracking-tighter text-black">
-              EMOTIONAL<br/>MACHINES
+            <h1 className="font-serif text-7xl md:text-8xl lg:text-[10rem] font-bold leading-[0.85] tracking-tighter text-white mb-8">
+              Emotional<br />Machines
             </h1>
-            <div className="w-16 h-px bg-black/30" />
-            <p className="text-black/55 text-lg leading-relaxed max-w-md font-sans">
+            <p className="text-white/55 text-base md:text-lg leading-relaxed max-w-sm font-sans">
               Exploring rare and collectible cars as cultural icons, emotional machines, and engineering masterpieces — through access to private collections and cinematic storytelling.
-            </p>
-            <div className="flex items-center gap-6 pt-2">
-              <Link
-                href="/gallery"
-                className="text-xs uppercase tracking-[0.3em] text-black/70 border-b border-black/30 pb-1 hover:text-black hover:border-black transition-colors duration-300"
-              >
-                Explore the Collection
-              </Link>
-              <span className="text-black/20 text-lg">—</span>
-              <Link
-                href="/about"
-                className="text-xs uppercase tracking-[0.3em] text-black/35 border-b border-black/15 pb-1 hover:text-black hover:border-black/40 transition-colors duration-300"
-              >
-                Our Story
-              </Link>
-            </div>
-            <p className="text-xs uppercase tracking-widest text-black/25 font-sans mt-4">
-              By Volodymyr Nosov — WBT Garage
             </p>
           </motion.div>
 
-          {/* Right — Collector Wall: three overlapping B&W prints */}
-          <div className="w-full md:w-1/2 flex justify-center items-center py-16">
-            <div className="relative" style={{ width: '360px', height: '480px' }}>
-
-              {/* Back-left print — Porsche 911 profile */}
-              <motion.div
-                initial={{ opacity: 0, x: -20, rotate: -10 }}
-                animate={{ opacity: 1, x: 0, rotate: -7 }}
-                transition={{ duration: 1.2, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-                className="absolute"
-                style={{ left: '-40px', top: '30px', zIndex: 1 }}
+          {/* Bottom nav strip */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.5, ease: "easeOut" }}
+            className="border-t border-white/10 pt-8 flex flex-wrap gap-x-16 gap-y-4"
+          >
+            {[
+              ["About Us", "/about"],
+              ["Gallery", "/gallery"],
+              ["Media", "/media"],
+              ["Approach Us", "/approach"],
+            ].map(([label, href]) => (
+              <Link
+                key={href}
+                href={href}
+                className="font-serif text-xl md:text-2xl text-white/70 hover:text-white transition-colors duration-300"
               >
-                <div style={{ filter: 'drop-shadow(2px 8px 20px rgba(0,0,0,0.9))' }}>
-                  <div className="tape absolute w-12 h-4 rounded-sm" style={{ top: '-8px', left: '20px', transform: 'rotate(-3deg)', zIndex: 5 }} />
-                  <div className="bg-white p-2 pb-7" style={{ width: '200px' }}>
-                    <div style={{ aspectRatio: '3/4', overflow: 'hidden' }}>
-                      <img
-                        src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&q=80&w=600"
-                        alt="Classic Porsche"
-                        style={{ width: '100%', height: '100%', objectFit: 'cover', filter: 'grayscale(1) contrast(1.15) brightness(0.95)' }}
-                      />
-                    </div>
-                    <p style={{ fontFamily: 'serif', fontSize: '8px', letterSpacing: '0.15em', textAlign: 'center', color: '#333', paddingTop: '6px', textTransform: 'uppercase' }}>No. 047 — Stuttgart</p>
-                  </div>
-                </div>
-              </motion.div>
-
-              {/* Back-right print — Ferrari close-up */}
-              <motion.div
-                initial={{ opacity: 0, x: 20, rotate: 8 }}
-                animate={{ opacity: 1, x: 0, rotate: 6 }}
-                transition={{ duration: 1.2, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-                className="absolute"
-                style={{ right: '-50px', top: '20px', zIndex: 2 }}
-              >
-                <div style={{ filter: 'drop-shadow(2px 8px 20px rgba(0,0,0,0.9))' }}>
-                  <div className="tape absolute w-12 h-4 rounded-sm" style={{ top: '-8px', right: '16px', transform: 'rotate(4deg)', zIndex: 5 }} />
-                  <div className="bg-white p-2 pb-7" style={{ width: '185px' }}>
-                    <div style={{ aspectRatio: '2/3', overflow: 'hidden' }}>
-                      <img
-                        src="https://images.unsplash.com/photo-1583121274602-3e2820c69888?auto=format&fit=crop&q=80&w=600"
-                        alt="Rare Ferrari"
-                        style={{ width: '100%', height: '100%', objectFit: 'cover', filter: 'grayscale(1) contrast(1.2) brightness(0.9)' }}
-                      />
-                    </div>
-                    <p style={{ fontFamily: 'serif', fontSize: '8px', letterSpacing: '0.15em', textAlign: 'center', color: '#333', paddingTop: '6px', textTransform: 'uppercase' }}>No. 012 — Maranello</p>
-                  </div>
-                </div>
-              </motion.div>
-
-              {/* Front center — hero print, largest */}
-              <motion.div
-                initial={{ opacity: 0, y: 30, rotate: 3 }}
-                animate={{ opacity: 1, y: 0, rotate: -1.5 }}
-                transition={{ duration: 1.3, delay: 0.35, ease: [0.16, 1, 0.3, 1] }}
-                className="absolute"
-                style={{ left: '30px', top: '40px', zIndex: 10 }}
-              >
-                <div style={{ filter: 'drop-shadow(6px 16px 36px rgba(0,0,0,0.95)) drop-shadow(0 2px 8px rgba(0,0,0,0.7))' }}>
-                  <div className="tape absolute w-14 h-5 rounded-sm" style={{ top: '-10px', left: '24px', transform: 'rotate(-2deg)', zIndex: 15 }} />
-                  <div className="tape absolute w-14 h-5 rounded-sm" style={{ top: '-8px', right: '20px', transform: 'rotate(3.5deg)', zIndex: 15 }} />
-                  <div className="bg-white p-3 pb-10" style={{ width: '260px' }}>
-                    <div style={{ aspectRatio: '2/3', overflow: 'hidden' }}>
-                      <img
-                        src="https://images.unsplash.com/photo-1494976388531-d1058494cdd8?auto=format&fit=crop&q=80&w=800"
-                        alt="Collector car"
-                        style={{ width: '100%', height: '100%', objectFit: 'cover', filter: 'grayscale(1) contrast(1.25) brightness(0.88)' }}
-                      />
-                    </div>
-                    <div style={{ paddingTop: '10px', textAlign: 'center', borderTop: '1px solid #e5e5e5', marginTop: '8px' }}>
-                      <p style={{ fontFamily: 'serif', fontSize: '9px', letterSpacing: '0.2em', color: '#222', textTransform: 'uppercase' }}>WBT Garage — Private Collection</p>
-                    </div>
-                  </div>
-                </div>
-              </motion.div>
-
-            </div>
-          </div>
-
+                {label}
+              </Link>
+            ))}
+          </motion.div>
         </div>
       </section>
 
-      {/* Ticker Strip */}
+      {/* ── Ticker ── */}
       <div className="bg-neutral-900 border-y border-white/10 py-4 overflow-hidden relative">
         <div className="flex whitespace-nowrap animate-ticker">
           {[...Array(3)].map((_, repeat) => (
@@ -161,11 +105,11 @@ export default function Home() {
         </div>
       </div>
 
-      {/* Manifesto */}
+      {/* ── Manifesto ── */}
       <section className="py-32 md:py-48 px-8 bg-background relative overflow-hidden">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-px h-32 bg-gradient-to-b from-transparent to-foreground/10" />
         <div className="max-w-4xl mx-auto text-center relative z-10">
-          <motion.h2 
+          <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
@@ -174,7 +118,7 @@ export default function Home() {
           >
             The Manifesto
           </motion.h2>
-          <motion.p 
+          <motion.p
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
@@ -186,54 +130,115 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Featured Stories */}
-      <section className="py-24 px-8 bg-[#0d0f14]">
+      {/* ── Featured Stories — Editorial layout ── */}
+      <section className="bg-[#0d0f14] py-24 px-8 md:px-16">
         <div className="max-w-7xl mx-auto">
-          <div className="flex justify-between items-end mb-16">
-            <h2 className="font-serif text-4xl md:text-5xl text-white">Featured Stories</h2>
-            <Link href="/gallery" className="hidden md:inline-block text-white/50 uppercase tracking-widest text-xs hover:text-white transition-colors border-b border-white/20 hover:border-white/60 pb-1">View All</Link>
+
+          {/* Header row */}
+          <div className="flex justify-between items-end border-b border-white/8 pb-8 mb-0">
+            <h2 className="font-serif text-3xl text-white/90 tracking-tight">Featured Stories</h2>
+            <Link
+              href="/gallery"
+              className="text-white/30 uppercase tracking-widest text-[10px] hover:text-white transition-colors"
+            >
+              View All →
+            </Link>
           </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {featuredStories.map((story, i) => (
-              <motion.div 
-                key={i}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.8, delay: i * 0.2 }}
-                className="group cursor-pointer"
-              >
-                <div className="relative aspect-[3/4] overflow-hidden mb-6">
-                  <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors duration-500 z-10" />
-                  <img 
-                    src={story.image} 
-                    alt={story.title} 
-                    className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700 ease-out"
-                  />
-                </div>
-                <p className="text-white/40 uppercase tracking-widest text-xs mb-3">{story.category}</p>
-                <h3 className="font-serif text-2xl text-white group-hover:text-white/60 transition-colors">{story.title}</h3>
-              </motion.div>
-            ))}
+
+          {/* Story grid: large left + two right */}
+          <div className="grid grid-cols-1 md:grid-cols-5 divide-x divide-white/8">
+
+            {/* Left — hero story */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.9 }}
+              className="md:col-span-3 group cursor-pointer border-b md:border-b-0 border-white/8"
+            >
+              <div className="relative overflow-hidden aspect-[4/3]">
+                <div className="absolute inset-0 bg-black/30 group-hover:bg-black/10 transition-colors duration-700 z-10" />
+                <img
+                  src={featuredStories[0].image}
+                  alt={featuredStories[0].title}
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000 ease-out"
+                  style={{ filter: 'grayscale(0.2)' }}
+                />
+                <span className="absolute top-6 left-6 z-20 font-serif text-white/30 text-7xl font-bold leading-none select-none">
+                  {featuredStories[0].issue}
+                </span>
+              </div>
+              <div className="p-8 flex flex-col gap-4">
+                <span className="text-white/30 uppercase tracking-[0.3em] text-[10px]">{featuredStories[0].category}</span>
+                <h3 className="font-serif text-3xl md:text-4xl text-white group-hover:text-white/60 transition-colors leading-tight">
+                  {featuredStories[0].title}
+                </h3>
+                <p className="text-white/40 text-sm leading-relaxed">{featuredStories[0].desc}</p>
+                <span className="text-white/40 text-xs uppercase tracking-widest mt-2 group-hover:text-white transition-colors">
+                  Read Story →
+                </span>
+              </div>
+            </motion.div>
+
+            {/* Right — two stacked stories */}
+            <div className="md:col-span-2 flex flex-col divide-y divide-white/8">
+              {featuredStories.slice(1).map((story, i) => (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, x: 30 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.8, delay: 0.2 + i * 0.15 }}
+                  className="group cursor-pointer flex flex-col flex-1"
+                >
+                  <div className="relative overflow-hidden" style={{ aspectRatio: '16/9' }}>
+                    <div className="absolute inset-0 bg-black/40 group-hover:bg-black/10 transition-colors duration-700 z-10" />
+                    <img
+                      src={story.image}
+                      alt={story.title}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000 ease-out"
+                      style={{ filter: 'grayscale(0.3)' }}
+                    />
+                    <span className="absolute top-4 left-4 z-20 font-serif text-white/25 text-5xl font-bold leading-none select-none">
+                      {story.issue}
+                    </span>
+                  </div>
+                  <div className="p-6 flex flex-col gap-3 flex-1">
+                    <span className="text-white/30 uppercase tracking-[0.3em] text-[10px]">{story.category}</span>
+                    <h3 className="font-serif text-xl text-white group-hover:text-white/60 transition-colors leading-tight">
+                      {story.title}
+                    </h3>
+                    <p className="text-white/35 text-xs leading-relaxed">{story.desc}</p>
+                    <span className="text-white/30 text-xs uppercase tracking-widest mt-auto group-hover:text-white transition-colors">
+                      Read Story →
+                    </span>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+
           </div>
         </div>
       </section>
 
-      {/* Recent Media Preview */}
+      {/* ── Recent Media Preview ── */}
       <section className="py-32 px-8 bg-background relative">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-16">
           <div className="w-full md:w-1/2">
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 1 }}
               className="relative aspect-video bg-muted overflow-hidden"
             >
-              <img src="https://images.unsplash.com/photo-1614200187524-dc4b892acf16?auto=format&fit=crop&q=80&w=1200" alt="Video preview" className="w-full h-full object-cover" />
+              <img
+                src="https://images.unsplash.com/photo-1614200187524-dc4b892acf16?auto=format&fit=crop&q=80&w=1200"
+                alt="Video preview"
+                className="w-full h-full object-cover"
+              />
               <div className="absolute inset-0 flex items-center justify-center bg-black/40">
-                <div className="w-20 h-20 rounded-full border border-white/30 flex items-center justify-center backdrop-blur-sm group-hover:scale-110 transition-transform cursor-pointer">
+                <div className="w-20 h-20 rounded-full border border-white/30 flex items-center justify-center backdrop-blur-sm cursor-pointer hover:scale-110 transition-transform">
                   <div className="w-0 h-0 border-t-[10px] border-t-transparent border-l-[16px] border-l-white border-b-[10px] border-b-transparent ml-2" />
                 </div>
               </div>
@@ -245,8 +250,8 @@ export default function Home() {
             <p className="text-foreground/60 leading-relaxed text-lg">
               Step inside the workshop where masterpieces are reborn. An intimate look at the meticulous process of preserving automotive history.
             </p>
-            <Link 
-              href="/media" 
+            <Link
+              href="/media"
               className="inline-block border-b border-foreground/20 pb-2 uppercase tracking-widest text-sm hover:border-foreground hover:text-foreground transition-colors mt-8"
             >
               Watch Now
@@ -254,6 +259,7 @@ export default function Home() {
           </div>
         </div>
       </section>
+
     </div>
   );
 }
