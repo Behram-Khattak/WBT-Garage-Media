@@ -21,10 +21,8 @@ export default function Layout({ children }: { children: React.ReactNode }) {
     <div className="min-h-screen bg-background text-foreground flex flex-col font-sans">
       <header
         className={cn(
-          "fixed top-0 w-full z-50 transition-all duration-500 ease-in-out flex flex-col items-center",
-          isScrolled || !isHome
-            ? "bg-background/95 backdrop-blur-md border-b border-white/5 py-3 gap-2"
-            : "bg-transparent py-6 gap-3"
+          "fixed top-0 w-full z-50 transition-all duration-500 ease-in-out flex flex-col items-center bg-background/95 backdrop-blur-md border-b border-white/5",
+          isScrolled ? "py-3 gap-2" : "py-4 gap-2.5"
         )}
       >
         <Link href="/" className="font-serif text-2xl font-bold tracking-widest text-foreground hover:text-accent transition-colors">

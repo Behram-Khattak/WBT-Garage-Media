@@ -22,34 +22,82 @@ const featuredStories = [
 export default function Home() {
   return (
     <div className="w-full">
-      {/* Hero Section */}
-      <section className="relative h-screen flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0 z-0">
-          <img 
-            src="https://images.unsplash.com/photo-1603584173870-7f23fdae1b7a?auto=format&fit=crop&q=80&w=2000" 
-            alt="Cinematic Garage" 
-            className="w-full h-full object-cover opacity-40 mix-blend-luminosity"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-background via-background/20 to-transparent" />
-        </div>
-        
-        <div className="relative z-10 text-center max-w-5xl px-4 mt-20">
-          <motion.h1 
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1.2, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-            className="font-serif text-6xl md:text-8xl lg:text-9xl font-bold tracking-tighter text-accent mb-6 leading-[0.9]"
+      {/* Hero Section — Magazine Two-Column */}
+      <section className="min-h-screen bg-white flex items-stretch pt-24">
+        <div className="w-full max-w-7xl mx-auto px-8 flex flex-col md:flex-row items-center gap-12 py-16">
+
+          {/* Left — Editorial Content */}
+          <motion.div
+            initial={{ opacity: 0, x: -40 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
+            className="w-full md:w-1/2 flex flex-col justify-center gap-8"
           >
-            EMOTIONAL <br/> MACHINES
-          </motion.h1>
-          <motion.p 
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 1, delay: 0.8 }}
-            className="text-lg md:text-xl text-white/90 tracking-[0.2em] uppercase mb-12 max-w-2xl mx-auto leading-relaxed"
+            <p className="text-xs uppercase tracking-[0.4em] text-neutral-400 font-sans">
+              Issue No. 01 — Private Collections
+            </p>
+            <h1 className="font-serif text-6xl md:text-7xl lg:text-8xl font-bold leading-[0.9] tracking-tighter text-accent">
+              EMOTIONAL<br/>MACHINES
+            </h1>
+            <div className="w-16 h-px bg-accent" />
+            <p className="text-neutral-600 text-lg leading-relaxed max-w-md font-sans">
+              Exploring rare and collectible cars as cultural icons, emotional machines, and engineering masterpieces — through access to private collections and cinematic storytelling.
+            </p>
+            <div className="flex items-center gap-6 pt-2">
+              <Link
+                href="/gallery"
+                className="text-xs uppercase tracking-[0.3em] text-neutral-900 border-b border-neutral-900 pb-1 hover:text-accent hover:border-accent transition-colors duration-300"
+              >
+                Explore the Collection
+              </Link>
+              <span className="text-neutral-300 text-lg">—</span>
+              <Link
+                href="/about"
+                className="text-xs uppercase tracking-[0.3em] text-neutral-400 border-b border-neutral-300 pb-1 hover:text-accent hover:border-accent transition-colors duration-300"
+              >
+                Our Story
+              </Link>
+            </div>
+            <p className="text-xs uppercase tracking-widest text-neutral-400 font-sans mt-4">
+              By Volodymyr Nosov — WBT Garage
+            </p>
+          </motion.div>
+
+          {/* Right — Magazine-Ad Style Car Photo */}
+          <motion.div
+            initial={{ opacity: 0, x: 40 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 1, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
+            className="w-full md:w-1/2 flex justify-center items-center"
           >
-            Exploring rare and collectible cars as cultural icons and engineering masterpieces.
-          </motion.p>
+            <div className="relative w-full max-w-md">
+              {/* Outer accent border offset */}
+              <div className="absolute -top-4 -right-4 w-full h-full border-2 border-accent z-0" />
+              {/* Inner frame */}
+              <div className="relative z-10 border-4 border-neutral-900 overflow-hidden">
+                {/* Magazine header bar */}
+                <div className="bg-accent px-5 py-2 flex items-center justify-between">
+                  <span className="font-serif text-xs tracking-[0.3em] uppercase text-neutral-900 font-bold">WBT Garage</span>
+                  <span className="text-[10px] uppercase tracking-widest text-neutral-900/70">Private Edition</span>
+                </div>
+                {/* Car image */}
+                <div className="aspect-[3/4] overflow-hidden">
+                  <img
+                    src="https://images.unsplash.com/photo-1544829099-b9a0c07fad1a?auto=format&fit=crop&q=80&w=800"
+                    alt="Rare collectible car"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                {/* Magazine footer bar */}
+                <div className="bg-neutral-900 px-5 py-3">
+                  <p className="font-serif text-white text-sm italic">"Where speed meets legacy."</p>
+                </div>
+              </div>
+              {/* Bottom-left small accent square */}
+              <div className="absolute -bottom-4 -left-4 w-12 h-12 bg-accent z-0" />
+            </div>
+          </motion.div>
+
         </div>
       </section>
 
