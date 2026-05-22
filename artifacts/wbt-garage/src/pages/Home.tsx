@@ -35,10 +35,9 @@ export default function Home() {
         {/* Full-bleed car image */}
         <div className="absolute inset-0 z-0">
           <img
-            src="https://images.unsplash.com/photo-1580273916550-e323be2ae537?auto=format&fit=crop&q=90&w=1800"
+            src="/hero-car.png"
             alt="Collector car"
-            className="w-full h-full object-cover object-center opacity-60"
-            style={{ filter: 'grayscale(0.3) contrast(1.1)' }}
+            className="w-full h-full object-cover object-center opacity-90"
           />
           {/* Left fade so text is readable */}
           <div className="absolute inset-0 bg-gradient-to-r from-black via-black/70 to-transparent" />
