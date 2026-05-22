@@ -101,6 +101,22 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Ticker Strip */}
+      <div className="bg-neutral-900 border-y border-white/10 py-4 overflow-hidden relative">
+        <div className="flex whitespace-nowrap animate-ticker">
+          {[...Array(3)].map((_, repeat) => (
+            <div key={repeat} className="flex items-center shrink-0">
+              {["Heritage", "Restoration", "Cinematic", "Rare Finds", "Private Collections", "Engineering", "Speed & Legacy", "Collector's Edition"].map((tag, i) => (
+                <span key={i} className="flex items-center gap-6 px-6">
+                  <span className="text-xs uppercase tracking-[0.35em] text-white/60 font-sans">{tag}</span>
+                  <span className="text-accent text-lg leading-none">✦</span>
+                </span>
+              ))}
+            </div>
+          ))}
+        </div>
+      </div>
+
       {/* Manifesto */}
       <section className="py-32 md:py-48 px-8 bg-background relative overflow-hidden">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-px h-32 bg-gradient-to-b from-transparent to-white/10" />
