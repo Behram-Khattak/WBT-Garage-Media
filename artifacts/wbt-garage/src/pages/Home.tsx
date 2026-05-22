@@ -38,7 +38,7 @@ export default function Home() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1.2, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-            className="font-serif text-6xl md:text-8xl lg:text-9xl font-bold tracking-tighter text-white mb-6 leading-[0.9]"
+            className="font-serif text-6xl md:text-8xl lg:text-9xl font-bold tracking-tighter text-accent mb-6 leading-[0.9]"
           >
             EMOTIONAL <br/> MACHINES
           </motion.h1>
@@ -46,22 +46,10 @@ export default function Home() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1, delay: 0.8 }}
-            className="text-lg md:text-xl text-foreground/80 tracking-[0.2em] uppercase mb-12 max-w-2xl mx-auto leading-relaxed"
+            className="text-lg md:text-xl text-white/90 tracking-[0.2em] uppercase mb-12 max-w-2xl mx-auto leading-relaxed"
           >
             Exploring rare and collectible cars as cultural icons and engineering masterpieces.
           </motion.p>
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 1, delay: 1.2 }}
-          >
-            <Link 
-              href="/gallery" 
-              className="inline-block border border-accent text-accent px-10 py-5 uppercase tracking-[0.3em] text-xs hover:bg-accent hover:text-black transition-all duration-500"
-            >
-              Enter the Garage
-            </Link>
-          </motion.div>
         </div>
       </section>
 

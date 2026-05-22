@@ -21,14 +21,16 @@ export default function Layout({ children }: { children: React.ReactNode }) {
     <div className="min-h-screen bg-background text-foreground flex flex-col font-sans">
       <header
         className={cn(
-          "fixed top-0 w-full z-50 transition-all duration-500 ease-in-out py-6 px-8 flex items-center justify-between",
-          isScrolled || !isHome ? "bg-background/95 backdrop-blur-md border-b border-white/5 py-4" : "bg-transparent"
+          "fixed top-0 w-full z-50 transition-all duration-500 ease-in-out flex flex-col items-center",
+          isScrolled || !isHome
+            ? "bg-background/95 backdrop-blur-md border-b border-white/5 py-3 gap-2"
+            : "bg-transparent py-6 gap-3"
         )}
       >
         <Link href="/" className="font-serif text-2xl font-bold tracking-widest text-foreground hover:text-accent transition-colors">
           WBT GARAGE
         </Link>
-        <nav className="hidden md:flex items-center gap-8 text-sm uppercase tracking-widest">
+        <nav className="hidden md:flex items-center gap-2 text-xs uppercase tracking-widest">
           {[
             ["Home", "/"],
             ["About", "/about"],
@@ -40,8 +42,10 @@ export default function Layout({ children }: { children: React.ReactNode }) {
               key={href}
               href={href}
               className={cn(
-                "transition-colors hover:text-accent",
-                location === href ? "text-accent" : "text-foreground/80"
+                "px-4 py-1.5 rounded-full border transition-all duration-300 hover:text-accent hover:border-accent",
+                location === href
+                  ? "text-accent border-accent"
+                  : "text-foreground/70 border-white/20"
               )}
             >
               {label}
