@@ -63,41 +63,84 @@ export default function Home() {
             </p>
           </motion.div>
 
-          {/* Right — Poster on Wall */}
-          <motion.div
-            initial={{ opacity: 0, x: 40, rotate: -3 }}
-            animate={{ opacity: 1, x: 0, rotate: -1.5 }}
-            transition={{ duration: 1.1, delay: 0.25, ease: [0.16, 1, 0.3, 1] }}
-            className="w-full md:w-1/2 flex justify-center items-center py-12"
-          >
-            <div className="poster-shadow" style={{ transform: 'rotate(-1.5deg)' }}>
-              {/* Tape strip top-left */}
-              <div
-                className="tape absolute w-14 h-5 z-20 rounded-sm"
-                style={{ top: '-10px', left: '28px', transform: 'rotate(-2deg)' }}
-              />
-              {/* Tape strip top-right */}
-              <div
-                className="tape absolute w-14 h-5 z-20 rounded-sm"
-                style={{ top: '-8px', right: '36px', transform: 'rotate(3deg)' }}
-              />
-              {/* White photo border — like a printed poster */}
-              <div className="relative bg-white p-3 pb-10" style={{ maxWidth: '380px' }}>
-                <div className="aspect-[2/3] overflow-hidden">
-                  <img
-                    src="https://images.unsplash.com/photo-1544829099-b9a0c07fad1a?auto=format&fit=crop&q=80&w=800"
-                    alt="Rare collectible car"
-                    className="w-full h-full object-cover"
-                    style={{ filter: 'contrast(1.05) saturate(0.9)' }}
-                  />
+          {/* Right — Collector Wall: three overlapping B&W prints */}
+          <div className="w-full md:w-1/2 flex justify-center items-center py-16">
+            <div className="relative" style={{ width: '360px', height: '480px' }}>
+
+              {/* Back-left print — Porsche 911 profile */}
+              <motion.div
+                initial={{ opacity: 0, x: -20, rotate: -10 }}
+                animate={{ opacity: 1, x: 0, rotate: -7 }}
+                transition={{ duration: 1.2, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
+                className="absolute"
+                style={{ left: '-40px', top: '30px', zIndex: 1 }}
+              >
+                <div style={{ filter: 'drop-shadow(2px 8px 20px rgba(0,0,0,0.9))' }}>
+                  <div className="tape absolute w-12 h-4 rounded-sm" style={{ top: '-8px', left: '20px', transform: 'rotate(-3deg)', zIndex: 5 }} />
+                  <div className="bg-white p-2 pb-7" style={{ width: '200px' }}>
+                    <div style={{ aspectRatio: '3/4', overflow: 'hidden' }}>
+                      <img
+                        src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&q=80&w=600"
+                        alt="Classic Porsche"
+                        style={{ width: '100%', height: '100%', objectFit: 'cover', filter: 'grayscale(1) contrast(1.15) brightness(0.95)' }}
+                      />
+                    </div>
+                    <p style={{ fontFamily: 'serif', fontSize: '8px', letterSpacing: '0.15em', textAlign: 'center', color: '#333', paddingTop: '6px', textTransform: 'uppercase' }}>No. 047 — Stuttgart</p>
+                  </div>
                 </div>
-                {/* Caption strip */}
-                <div className="pt-3 text-center">
-                  <p className="font-serif text-neutral-800 text-xs tracking-widest uppercase">WBT Garage — Private Collection</p>
+              </motion.div>
+
+              {/* Back-right print — Ferrari close-up */}
+              <motion.div
+                initial={{ opacity: 0, x: 20, rotate: 8 }}
+                animate={{ opacity: 1, x: 0, rotate: 6 }}
+                transition={{ duration: 1.2, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
+                className="absolute"
+                style={{ right: '-50px', top: '20px', zIndex: 2 }}
+              >
+                <div style={{ filter: 'drop-shadow(2px 8px 20px rgba(0,0,0,0.9))' }}>
+                  <div className="tape absolute w-12 h-4 rounded-sm" style={{ top: '-8px', right: '16px', transform: 'rotate(4deg)', zIndex: 5 }} />
+                  <div className="bg-white p-2 pb-7" style={{ width: '185px' }}>
+                    <div style={{ aspectRatio: '2/3', overflow: 'hidden' }}>
+                      <img
+                        src="https://images.unsplash.com/photo-1583121274602-3e2820c69888?auto=format&fit=crop&q=80&w=600"
+                        alt="Rare Ferrari"
+                        style={{ width: '100%', height: '100%', objectFit: 'cover', filter: 'grayscale(1) contrast(1.2) brightness(0.9)' }}
+                      />
+                    </div>
+                    <p style={{ fontFamily: 'serif', fontSize: '8px', letterSpacing: '0.15em', textAlign: 'center', color: '#333', paddingTop: '6px', textTransform: 'uppercase' }}>No. 012 — Maranello</p>
+                  </div>
                 </div>
-              </div>
+              </motion.div>
+
+              {/* Front center — hero print, largest */}
+              <motion.div
+                initial={{ opacity: 0, y: 30, rotate: 3 }}
+                animate={{ opacity: 1, y: 0, rotate: -1.5 }}
+                transition={{ duration: 1.3, delay: 0.35, ease: [0.16, 1, 0.3, 1] }}
+                className="absolute"
+                style={{ left: '30px', top: '40px', zIndex: 10 }}
+              >
+                <div style={{ filter: 'drop-shadow(6px 16px 36px rgba(0,0,0,0.95)) drop-shadow(0 2px 8px rgba(0,0,0,0.7))' }}>
+                  <div className="tape absolute w-14 h-5 rounded-sm" style={{ top: '-10px', left: '24px', transform: 'rotate(-2deg)', zIndex: 15 }} />
+                  <div className="tape absolute w-14 h-5 rounded-sm" style={{ top: '-8px', right: '20px', transform: 'rotate(3.5deg)', zIndex: 15 }} />
+                  <div className="bg-white p-3 pb-10" style={{ width: '260px' }}>
+                    <div style={{ aspectRatio: '2/3', overflow: 'hidden' }}>
+                      <img
+                        src="https://images.unsplash.com/photo-1494976388531-d1058494cdd8?auto=format&fit=crop&q=80&w=800"
+                        alt="Collector car"
+                        style={{ width: '100%', height: '100%', objectFit: 'cover', filter: 'grayscale(1) contrast(1.25) brightness(0.88)' }}
+                      />
+                    </div>
+                    <div style={{ paddingTop: '10px', textAlign: 'center', borderTop: '1px solid #e5e5e5', marginTop: '8px' }}>
+                      <p style={{ fontFamily: 'serif', fontSize: '9px', letterSpacing: '0.2em', color: '#222', textTransform: 'uppercase' }}>WBT Garage — Private Collection</p>
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+
             </div>
-          </motion.div>
+          </div>
 
         </div>
       </section>
