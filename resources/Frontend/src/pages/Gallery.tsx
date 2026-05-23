@@ -1,13 +1,31 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
+import wbt_image_1 from "../assets/images/wbt_image_1.jpg";
+import wbt_image_2 from "../assets/images/wbt_image_2.jpg";
+import wbt_image_3 from "../assets/images/wbt_image_3.jpg";
+import wbt_image_4 from "../assets/images/wbt_image_4.jpg";
+import wbt_image_5 from "../assets/images/wbt_image_5.jpg";
+import wbt_image_6 from "../assets/images/wbt_image_6.jpeg";
+import wbt_image_7 from "../assets/images/wbt_image_7.jpg";
+import wbt_image_8 from "../assets/images/wbt_image_8.jpg";
+import wbt_image_9 from "../assets/images/wbt_image_9.jpg";
+import wbt_image_10 from "../assets/images/wbt_image_10.jpg";
+import wbt_image_11 from "../assets/images/wbt_image_11.jpg";
+import wbt_image_12 from "../assets/images/wbt_image_12.jpg";
 
 const cars = [
-  { img: "https://images.unsplash.com/photo-1566367576585-051277d52997?auto=format&fit=crop&q=80&w=1400", title: "Porsche 911 Classic", span: "md:col-span-2 md:row-span-2" },
-  { img: "https://images.unsplash.com/photo-1542282088-fe8426682b8f?auto=format&fit=crop&q=80&w=1000", title: "Ferrari 930", span: "md:col-span-1 md:row-span-1" },
-  { img: "https://images.unsplash.com/photo-1611821064430-0d40221e4e03?auto=format&fit=crop&q=80&w=1000", title: "Midnight Cruiser", span: "md:col-span-1 md:row-span-2" },
-  { img: "https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&q=80&w=1000", title: "Jaguar E-Type", span: "md:col-span-1 md:row-span-1" },
-  { img: "https://images.unsplash.com/photo-1583121274602-3e2820c69888?auto=format&fit=crop&q=80&w=1400", title: "Lamborghini Testarossa", span: "md:col-span-2 md:row-span-1" },
-  { img: "https://images.unsplash.com/photo-1502877338535-766e1452684a?auto=format&fit=crop&q=80&w=1000", title: "Aston Martin Vintage", span: "md:col-span-1 md:row-span-1" },
+  { img: wbt_image_1, title: "Spyker C8 Aileron", span: "md:col-span-2 md:row-span-2" },
+  { img: wbt_image_2, title: "Spyker C8 Aileron (Top View)", span: "md:col-span-1 md:row-span-1" },
+  { img: wbt_image_3, title: "Spyker C8 Aileron (Front Track)", span: "md:col-span-1 md:row-span-2" },
+  { img: wbt_image_4, title: "Spyker C8 Aileron (Wheel Detail)", span: "md:col-span-1 md:row-span-1" },
+  { img: wbt_image_5, title: "Mercedes-Benz SL73 AMG (R129)", span: "md:col-span-2 md:row-span-1" },
+  { img: wbt_image_6, title: "Mercedes-Benz SL73 AMG (R129)", span: "md:col-span-1 md:row-span-1" },
+  { img: wbt_image_7, title: "Honda Civic Si (Coupe)", span: "md:col-span-1 md:row-span-1" },
+  { img: wbt_image_8, title: "Ferrari Dino 246 GT & Porsche 930 Slantnose", span: "md:col-span-2 md:row-span-1" },
+  { img: wbt_image_9, title: "Porsche 911 Turbo (930 Slantnose)", span: "md:col-span-1 md:row-span-1" },
+  { img: wbt_image_10, title: "Ferrari Dino 246 GT", span: "md:col-span-1 md:row-span-1" },
+  { img: wbt_image_11, title: "Ferrari Testarossa", span: "md:col-span-1 md:row-span-2" },
+  { img: wbt_image_12, title: "Classic Sports Cars Lineup", span: "md:col-span-1 md:row-span-1" },
 ];
 
 export default function Gallery() {
@@ -30,7 +48,7 @@ export default function Gallery() {
   }, [lightbox]);
 
   return (
-    <div className="min-h-screen bg-background pt-32 pb-24 px-4 md:px-8">
+    <div className="min-h-screen bg-background mt-6 pt-32 pb-24 px-4 md:px-8">
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
