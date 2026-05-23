@@ -30,23 +30,25 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         className={cn(
           "fixed top-0 w-full z-50 flex flex-col items-center transition-all duration-400 ease-in-out",
           transparent
-            ? "bg-transparent py-5 gap-2.5"
-            : "bg-white border-b border-black/10 py-3 gap-2"
+            ? "py-5 gap-2.5"
+            : "py-5 gap-2.5"
         )}
       >
         <Link href="/" className="flex items-center gap-3 group">
           <img
             src="/wbt-logo.png"
             alt="WBT Garage"
-            className="w-9 h-9 rounded-full object-cover transition-opacity duration-300 group-hover:opacity-70"
+            className="w-14 h-14 rounded-full object-cover transition-opacity duration-300 group-hover:opacity-70"
           />
-          <span className={cn(
+          {/* <span className={cn(
             "font-serif text-xl font-bold tracking-widest transition-colors duration-300 group-hover:opacity-60",
             transparent ? "text-white" : "text-black"
           )}>
             WBT GARAGE
-          </span>
+          </span> */}
         </Link>
+
+        <br></br>
 
         <nav className="hidden md:flex items-center gap-2 text-xs uppercase tracking-widest">
           {navLinks.map(([label, href]) => (

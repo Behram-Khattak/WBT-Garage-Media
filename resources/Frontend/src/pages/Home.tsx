@@ -1,26 +1,29 @@
 import { motion } from "framer-motion";
 import { Link } from "wouter";
+import wbt_image_1 from "../assets/images/wbt_image_1.jpg";
+import wbt_image_8 from "../assets/images/wbt_image_8.jpg";
+import wbt_image_9 from "../assets/images/wbt_image_9.jpg";
 
 const featuredStories = [
   {
     issue: "01",
-    title: "The Ghost of Le Mans",
+    title: "Spyker C8 Aileron",
     category: "Heritage",
-    image: "https://images.unsplash.com/photo-1544829099-b9a0c07fad1a?auto=format&fit=crop&q=80&w=1200",
-    desc: "Racing ghosts and the machines they left behind."
-  },
-  {
-    issue: "02",
-    title: "Engineering Obsession",
-    category: "Restoration",
-    image: "https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&q=80&w=800",
+    image: wbt_image_1,
     desc: "Inside the workshop where masterpieces are reborn."
   },
   {
+    issue: "02",
+    title: "Ferrari Dino 246 GT & Porsche 930 Slantnose",
+    category: "Restoration",
+    image: wbt_image_8,
+    desc: "An intimate look at the meticulous process of preserving automotive history."
+  },
+  {
     issue: "03",
-    title: "Midnight Drive",
+    title: "Porsche 911 Turbo (930 Slantnose)",
     category: "Cinematic",
-    image: "https://images.unsplash.com/photo-1611821064430-0d40221e4e03?auto=format&fit=crop&q=80&w=800",
+    image: wbt_image_9,
     desc: "When the city sleeps, the machines come alive."
   }
 ];
