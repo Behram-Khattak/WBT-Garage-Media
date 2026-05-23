@@ -29,9 +29,9 @@ export default function Media() {
     <div className="min-h-screen bg-background mt-6 pt-32 pb-32 px-4 md:px-8">
       <div className="max-w-8xl mx-auto px-4 md:px-8">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 20 }}
+          transition={{ duration: 0.4 }}
           className="text-center mb-24"
         >
           <h1 className="font-serif text-5xl md:text-7xl mb-6">Car Projects</h1>
@@ -63,9 +63,9 @@ export default function Media() {
                 </div>
 
                 {/* Video Column */}
-                <div className={`w-full md:w-3/5 bg-[#050505] p-2 md:p-4 rounded-2xl border border-white/10 overflow-hidden transition-all duration-500 ${ep.type === "youtube short"
-                    ? "md:max-w-[320px] aspect-[9/16]"
-                    : "aspect-video"
+                <div className={`w-full md:w-3/5 bg-[#050505] p-2 md:p-4 rounded-4xl border border-white/10 overflow-hidden transition-all duration-500 ${ep.type === "youtube short"
+                  ? "md:max-w-[320px] aspect-[9/16]"
+                  : "aspect-video"
                   }`}>
                   <iframe
                     className="w-full h-full rounded-xl"

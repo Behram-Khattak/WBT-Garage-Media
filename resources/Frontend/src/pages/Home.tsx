@@ -49,13 +49,13 @@ export default function Home() {
         </div>
 
         {/* Content */}
-        <div className="relative z-10 flex-1 flex flex-col justify-between px-8 md:px-16 py-12">
+        <div className="relative z-10 flex-1 flex flex-col justify-between md:justify-center px-8 md:px-16">
 
           {/* Main text */}
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1.1, ease: [0.16, 1, 0.3, 1] }}
+            transition={{ duration: 0.1, delay: 0.3 }}
             className="max-w-2xl mt-8"
           >
             <h1 className="font-serif text-7xl md:text-8xl lg:text-[10rem] font-bold leading-[0.85] tracking-tighter text-white mb-8">
@@ -64,10 +64,17 @@ export default function Home() {
             <p className="text-white/55 text-base md:text-lg leading-relaxed max-w-sm font-sans">
               Exploring rare and collectible cars as cultural icons, emotional machines, and engineering masterpieces — through access to private collections and cinematic storytelling.
             </p>
+            <br></br>
+            <Link
+              href="/media"
+              className="inline-block border-b text-white border-white/20 pb-2 uppercase tracking-widest text-sm hover:border-white hover:text-white transition-colors"
+            >
+              Watch the Latest Episode →
+            </Link>
           </motion.div>
 
           {/* Bottom nav strip */}
-          <motion.div
+          {/* <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.5, ease: "easeOut" }}
@@ -87,7 +94,7 @@ export default function Home() {
                 {label}
               </Link>
             ))}
-          </motion.div>
+          </motion.div> */}
         </div>
       </section>
 
@@ -177,7 +184,7 @@ export default function Home() {
                 </h3>
                 <p className="text-white/40 text-sm leading-relaxed">{featuredStories[0].desc}</p>
                 <span className="text-white/40 text-xs uppercase tracking-widest mt-2 group-hover:text-white transition-colors">
-                  Read Story →
+                  <Link href="/stories" target="_blank">Read Story → </Link>
                 </span>
               </div>
             </motion.div>
@@ -212,7 +219,9 @@ export default function Home() {
                     </h3>
                     <p className="text-white/35 text-xs leading-relaxed">{story.desc}</p>
                     <span className="text-white/30 text-xs uppercase tracking-widest mt-auto group-hover:text-white transition-colors">
-                      Read Story →
+                      <Link href="/stories" target="_blank">
+                        Read Story →
+                      </Link>
                     </span>
                   </div>
                 </motion.div>
@@ -234,26 +243,26 @@ export default function Home() {
               transition={{ duration: 1 }}
               className="relative aspect-video bg-muted overflow-hidden"
             >
-              <img
-                src="https://images.unsplash.com/photo-1614200187524-dc4b892acf16?auto=format&fit=crop&q=80&w=1200"
+              <iframe
+                src="https://www.youtube.com/embed/BNN7UwM6fbg?modestbranding=1&rel=0`"
                 alt="Video preview"
-                className="w-full h-full object-cover"
-              />
-              <div className="absolute inset-0 flex items-center justify-center bg-black/40">
+                className="w-full h-full object-cover">
+              </iframe>
+              {/* <div className="absolute inset-0 flex items-center justify-center bg-black/40">
                 <div className="w-20 h-20 rounded-full border border-white/30 flex items-center justify-center backdrop-blur-sm cursor-pointer hover:scale-110 transition-transform">
                   <div className="w-0 h-0 border-t-[10px] border-t-transparent border-l-[16px] border-l-white border-b-[10px] border-b-transparent ml-2" />
                 </div>
-              </div>
+              </div> */}
             </motion.div>
           </div>
           <div className="w-full md:w-1/2 space-y-8">
             <h2 className="text-accent uppercase tracking-[0.3em] text-sm">Latest Episode</h2>
-            <h3 className="font-serif text-4xl md:text-6xl">The Art of the Engine</h3>
+            <h3 className="font-serif text-4xl md:text-6xl">Spyker C8 Aileron on Terramar</h3>
             <p className="text-foreground/60 leading-relaxed text-lg">
-              Step inside the workshop where masterpieces are reborn. An intimate look at the meticulous process of preserving automotive history.
+              In the very first episode of WBT Garage, Volodymyr Nosov explores one of the rarest hand-built supercars ever made — the Spyker C8 Aileron — on the legendary Terramar circuit.
             </p>
             <Link
-              href="/media"
+              href="https://youtu.be/BNN7UwM6fbg?si=VCDM9Zp0SiQEhIDX" target="_blank"
               className="inline-block border-b border-foreground/20 pb-2 uppercase tracking-widest text-sm hover:border-foreground hover:text-foreground transition-colors mt-8"
             >
               Watch Now
