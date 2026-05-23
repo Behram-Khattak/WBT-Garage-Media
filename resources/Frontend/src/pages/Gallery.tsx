@@ -51,9 +51,9 @@ export default function Gallery() {
     <div className="min-h-screen bg-background mt-6 pt-32 pb-24 px-4 md:px-8">
       <div className="max-w-7xl mx-auto">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 20 }}
+          transition={{ duration: 0.4 }}
           className="text-center mb-16 md:mb-24"
         >
           <h1 className="font-serif text-5xl md:text-7xl mb-6">The Collection</h1>

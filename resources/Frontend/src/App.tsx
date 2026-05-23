@@ -10,6 +10,7 @@ import About from "@/pages/About";
 import Gallery from "@/pages/Gallery";
 import Media from "@/pages/Media";
 import Approach from "@/pages/Approach";
+import Stories from "@/pages/Stories";
 
 const queryClient = new QueryClient();
 
@@ -21,6 +22,7 @@ function Router() {
       <Route path="/gallery" component={Gallery} />
       <Route path="/media" component={Media} />
       <Route path="/approach" component={Approach} />
+      <Route path="/stories" component={Stories} />
       <Route component={NotFound} />
     </Switch>
   );

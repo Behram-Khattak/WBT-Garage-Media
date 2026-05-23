@@ -7,6 +7,7 @@ const navLinks = [
   ["About", "/about"],
   ["Gallery", "/gallery"],
   ["Media", "/media"],
+  ["Stories", "/stories"],
   ["Approach Us", "/approach"],
 ] as const;
 
@@ -24,14 +25,14 @@ export default function Layout({ children }: { children: React.ReactNode }) {
   const transparent = isHome && !isScrolled;
 
   return (
-    <div className="min-h-screen bg-background text-foreground flex flex-col font-sans">
+    <div className="min-h-screen bg-background text-foreground flex flex-col">
       {/* ── Header ── */}
       <header
         className={cn(
-          "fixed top-0 w-full z-50 flex flex-col items-center transition-all duration-400 ease-in-out",
+          "fixed top-0 w-full z-50 flex flex-col items-center transition-all duration-400 ease-in-out space-y-4",
           transparent
-            ? "py-5 gap-2.5"
-            : "py-5 gap-2.5"
+            ? "bg-transparent py-5 gap-2.5"
+            : "bg-white border-b border-black/10 py-5 gap-2.0"
         )}
       >
         <Link href="/" className="flex items-center gap-3 group">
@@ -47,8 +48,6 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             WBT GARAGE
           </span> */}
         </Link>
-
-        <br></br>
 
         <nav className="hidden md:flex items-center gap-2 text-xs uppercase tracking-widest">
           {navLinks.map(([label, href]) => (
