@@ -3,6 +3,7 @@ import { Link } from "wouter";
 import wbt_image_1 from "../assets/images/wbt_image_1.jpg";
 import wbt_image_8 from "../assets/images/wbt_image_8.jpg";
 import wbt_image_9 from "../assets/images/wbt_image_9.jpg";
+import wbt_video from "../assets/videos/wbt_video.mov";
 
 const featuredStories = [
   {
@@ -33,68 +34,57 @@ export default function Home() {
     <div className="w-full">
 
       {/* ── Hero ── */}
-      <section className="relative min-h-screen flex flex-col overflow-hidden bg-black pt-[88px]">
+      <section className="relative min-h-screen flex flex-col justify-end overflow-hidden bg-black py-16 md:py-18">
 
-        {/* Full-bleed car image */}
+        {/* Full-bleed hero video */}
         <div className="absolute inset-0 z-0">
-          <img
-            src="/hero-car.png"
-            alt="Collector car"
-            className="w-full h-full object-cover object-center opacity-90"
+          {/* <iframe
+            src="https://www.youtube.com/embed/LbrQY7fkIQY?controls=0&showinfo=0&modestbranding=1&rel=0&autoplay=1&loop=1&playlist=LbrQY7fkIQY&mute=1&enablejsapi=1"
+            title="Hero Video"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+            allowFullScreen
+            className="absolute inset-0 w-full h-full object-cover object-center opacity-90 pointer-events-none"
+            style={{ pointerEvents: 'none' }}
+          ></iframe> */}
+          <video
+            autoPlay
+            loop
+            src={wbt_video}
+            muted
+            className="absolute inset-0 w-full h-full object-cover object-center opacity-90 pointer-events-none"
           />
           {/* Left fade so text is readable */}
-          <div className="absolute inset-0 bg-gradient-to-r from-black via-black/70 to-transparent" />
+          <div className="absolute inset-0 bg-linear-to-r from-black via-black/20 to-transparent" />
           {/* Bottom fade */}
-          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
+          <div className="absolute inset-0 bg-linear-to-t from-black/80 via-transparent to-transparent" />
         </div>
 
         {/* Content */}
-        <div className="relative z-10 flex-1 flex flex-col justify-between md:justify-center px-8 md:px-16">
+        <div className="relative z-10 px-8 md:px-16">
 
           {/* Main text */}
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.1, delay: 0.3 }}
-            className="max-w-2xl mt-8"
+            className="max-w-full mt-8 lg:flex justify-between content-end gap-16"
           >
             <h1 className="font-serif text-7xl md:text-8xl lg:text-[10rem] font-bold leading-[0.85] tracking-tighter text-white mb-8">
-              Emotional<br />Machines
+              Emotional<br /><span className="text-[8rem]">Machines</span>
             </h1>
-            <p className="text-white/55 text-base md:text-lg leading-relaxed max-w-sm font-sans">
-              Exploring rare and collectible cars as cultural icons, emotional machines, and engineering masterpieces — through access to private collections and cinematic storytelling.
-            </p>
-            <br></br>
-            <Link
-              href="/media"
-              className="inline-block border-b text-white border-white/20 pb-2 uppercase tracking-widest text-sm hover:border-white hover:text-white transition-colors"
-            >
-              Watch the Latest Episode →
-            </Link>
-          </motion.div>
-
-          {/* Bottom nav strip */}
-          {/* <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.5, ease: "easeOut" }}
-            className="border-t border-white/10 pt-8 flex flex-wrap gap-x-16 gap-y-4"
-          >
-            {[
-              ["About Us", "/about"],
-              ["Gallery", "/gallery"],
-              ["Media", "/media"],
-              ["Approach Us", "/approach"],
-            ].map(([label, href]) => (
+            <div>
+              <p className="text-white/55 text-base md:text-lg leading-relaxed max-w-sm font-sans">
+                Exploring rare and collectible cars as cultural icons, emotional machines, and engineering masterpieces — through access to private collections and cinematic storytelling.
+              </p>
+              <br></br>
               <Link
-                key={href}
-                href={href}
-                className="font-serif text-xl md:text-2xl text-white/70 hover:text-white transition-colors duration-300"
+                href="/media"
+                className="inline-block border-b text-white border-white/20 pb-2 uppercase tracking-widest text-sm hover:border-white hover:text-white transition-colors"
               >
-                {label}
+                Watch the Latest Episode →
               </Link>
-            ))}
-          </motion.div> */}
+            </div>
+          </motion.div>
         </div>
       </section>
 
