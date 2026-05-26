@@ -70,7 +70,7 @@ export default function Home() {
             className="max-w-full mt-8 lg:flex justify-between content-end gap-16"
           >
             <h1 className="font-serif text-7xl md:text-8xl lg:text-[10rem] font-bold leading-[0.85] tracking-tighter text-white mb-8">
-              Emotional<br /><span className="text-[8rem]">Machines</span>
+              Emotional<br /><span className="md:text-[8rem]">Machines</span>
             </h1>
             <div>
               <p className="text-white/55 text-base md:text-lg leading-relaxed max-w-sm font-sans">
