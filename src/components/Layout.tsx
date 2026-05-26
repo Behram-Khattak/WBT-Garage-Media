@@ -1,6 +1,8 @@
 import { Link, useLocation } from "wouter";
 import { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
+import wbt_badge from "@/assets/images/wbt-badge-new.png";
+import { SiFacebook, SiInstagram, SiPinterest, SiTiktok, SiX, SiYoutube } from "react-icons/si";
 
 const navLinks = [
   ["Home", "/"],
@@ -40,7 +42,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
 
   return (
     <div className="min-h-screen bg-background text-foreground flex flex-col"
-    onClick={() => isMobileMenuOpen && toggleMobileMenu()}
+      onClick={() => isMobileMenuOpen && toggleMobileMenu()}
     >
       {/* ── Header ── */}
       <header
@@ -59,7 +61,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           />
         </Link>
 
-        <div className="navigations">
+        <div className="navigation">
           <nav className="hidden md:flex items-center gap-2 text-xs uppercase tracking-widest">
             {navLinks.map(([label, href]) => (
               <Link
@@ -107,8 +109,8 @@ export default function Layout({ children }: { children: React.ReactNode }) {
               transition: "opacity 0.3s ease, visibility 0.3s ease",
             }}
           >
-            <nav className="absolute mobile-nav text-center top-full left-0 right-0 bg-white/90 backdrop-blur-sm border-t border-black/10 py-4">
-              {navLinks.map(([label, href]) => (
+            <nav className="absolute mobile-nav text-center top-full left-0 right-0 bg-[#f6f5f3] border-b backdrop-blur-sm border-t border-black/10 py-4">
+              {navLinks.map(([label, href, icon]) => (
                 <Link
                   key={href}
                   href={href}
@@ -127,36 +129,48 @@ export default function Layout({ children }: { children: React.ReactNode }) {
 
       {/* ── Footer ── */}
       <footer className="bg-[#0c0d10] text-white">
-        <div className="border-b border-white/8 px-8 md:px-16 py-12 flex flex-col md:flex-row justify-between items-start gap-10">
+        <div className="px-8 md:px-16 py-12 flex flex-col lg:flex-row justify-between items-start gap-10">
           <div className="flex flex-col gap-5 max-w-xs">
-            <div className="flex items-center gap-3">
-              <img
-                src="/wbt-logo.png"
-                alt="WBT Garage"
-                className="w-10 h-10 rounded-full object-cover opacity-90"
-              />
-              <span className="font-serif text-xl font-bold tracking-widest text-white">
-                WBT GARAGE
-              </span>
-            </div>
             <p className="text-white/40 text-sm leading-relaxed font-sans">
               A cinematic record of rare machines, private collections, and the
               culture of the automobile.
             </p>
+            <div className="social-links flex flex-wrap gap-4">
+              <a href="https://www.facebook.com/wbt_garage/" className="text-2xl text-white/40 hover:text-white transition-colors transform hover:-translate-y-1 duration-300">
+                <SiFacebook />
+              </a>
+              <a href="https://www.instagram.com/wbt_garage/" className="text-2xl text-white/40 hover:text-white transition-colors transform hover:-translate-y-1 duration-300">
+                <SiInstagram />
+              </a>
+              <a href="https://www.tiktok.com/@wbt_garage" className="text-2xl text-white/40 hover:text-white transition-colors transform hover:-translate-y-1 duration-300">
+                <SiX />
+              </a>
+              <a href="https://www.youtube.com/@WBT_garage" className="text-2xl text-white/40 hover:text-white transition-colors transform hover:-translate-y-1 duration-300">
+                <SiYoutube />
+              </a>
+              <a href="https://www.pinterest.com/wbt_garage/" className="text-2xl text-white/40 hover:text-white transition-colors transform hover:-translate-y-1 duration-300">
+                <SiPinterest />
+              </a>
+              <a href="https://www.tiktok.com/@wbt_garage" className="text-2xl text-white/40 hover:text-white transition-colors transform hover:-translate-y-1 duration-300">
+                <SiTiktok />
+              </a>
+            </div>
           </div>
 
-          <div className="flex gap-16">
-            <div className="flex flex-col gap-3">
+          <div className="md:flex gap-16">
+            <div className="mb-6">
               <p className="text-white/25 text-[10px] uppercase tracking-[0.3em] mb-1">Explore</p>
-              {navLinks.map(([label, href]) => (
-                <Link
-                  key={href}
-                  href={href}
-                  className="text-white/55 text-sm hover:text-white transition-colors duration-300"
-                >
-                  {label}
-                </Link>
-              ))}
+              <div className="flex gap-3">
+                {navLinks.map(([label, href]) => (
+                  <Link
+                    key={href}
+                    href={href}
+                    className="text-white/55 text-sm hover:text-white transition-colors duration-300"
+                  >
+                    {label}
+                  </Link>
+                ))}
+              </div>
             </div>
 
             <div className="flex flex-col gap-3">
@@ -177,7 +191,15 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           </div>
         </div>
 
-        <div className="px-8 md:px-16 py-6 flex flex-col md:flex-row justify-between items-center gap-3 text-[11px] uppercase tracking-widest text-white/20">
+        <div className="px-8 md:px-16 py-6 flex justify-center items-center max-w-7xl mx-auto">
+          <img
+            src={wbt_badge}
+            alt="WBT Garage"
+            className="rounded-full object-cover opacity-60"
+          />
+        </div>
+
+        <div className="px-8 md:px-16 py-6 flex flex-col md:flex-row justify-between items-center gap-3 text-[11px] uppercase tracking-widest text-white/40">
           <p>© {new Date().getFullYear()} WBT Garage — All rights reserved</p>
           <p>By Volodymyr Nosov</p>
         </div>

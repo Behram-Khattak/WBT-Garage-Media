@@ -38,19 +38,15 @@ export default function Home() {
 
         {/* Full-bleed hero video */}
         <div className="absolute inset-0 z-0">
-          {/* <iframe
-            src="https://www.youtube.com/embed/LbrQY7fkIQY?controls=0&showinfo=0&modestbranding=1&rel=0&autoplay=1&loop=1&playlist=LbrQY7fkIQY&mute=1&enablejsapi=1"
-            title="Hero Video"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-            allowFullScreen
-            className="absolute inset-0 w-full h-full object-cover object-center opacity-90 pointer-events-none"
-            style={{ pointerEvents: 'none' }}
-          ></iframe> */}
           <video
             autoPlay
-            loop
-            src={wbt_video}
             muted
+            loop
+            playsInline
+            webkit-playsinline="true"
+            preload="auto"
+            src={wbt_video}
+            typeof=""
             className="absolute inset-0 w-full h-full object-cover object-center opacity-90 pointer-events-none"
           />
           {/* Left fade so text is readable */}
