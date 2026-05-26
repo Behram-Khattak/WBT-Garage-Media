@@ -5,9 +5,9 @@
 
 @font-face {
   /* change the font family to Post No Bills Jaffna */
-  font-family: 'Theater';
-  src: url('/fonts/Theaterv04_Bold.ttf') format('truetype'),
-       url('/fonts/Theater_Bold.otf') format('opentype');
+  font-family: 'PostNoBillsJaffna';
+  src: url('/fonts/PostNoBillsJaffna-Bold.ttf') format('truetype'),
+       url('/fonts/PostNoBillsJaffna-Regular.ttf') format('truetype');
   font-weight: bold;
   font-style: normal;
   font-display: swap;
@@ -114,7 +114,7 @@
   --chart-5: 220 4% 82%;
 
   --app-font-sans: 'Outfit', sans-serif;
-  --app-font-serif: 'Theater', 'Outfit', sans-serif;
+  --app-font-serif: 'PostNoBillsJaffna', 'Outfit', sans-serif;
   --app-font-mono: Menlo, monospace;
   --radius: 0rem;
   

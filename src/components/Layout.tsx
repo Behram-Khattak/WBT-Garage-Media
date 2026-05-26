@@ -22,14 +22,30 @@ export default function Layout({ children }: { children: React.ReactNode }) {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  // implement the hamburger menu interaction using useState to toggle the mobile navigation menu visibility when the hamburger button is clicked. The menu should slide in from the top and cover the entire screen with a semi-transparent background. Clicking outside the menu or on a link should close the menu. Use Tailwind CSS for styling and transitions.
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen);
+
+    // prevent body scroll when mobile menu is open
+    if (!isMobileMenuOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+  };
+
   const transparent = isHome && !isScrolled;
 
   return (
-    <div className="min-h-screen bg-background text-foreground flex flex-col">
+    <div className="min-h-screen bg-background text-foreground flex flex-col"
+    onClick={() => isMobileMenuOpen && toggleMobileMenu()}
+    >
       {/* ── Header ── */}
       <header
         className={cn(
-          "fixed top-0 w-full z-50 flex flex-col items-center transition-all duration-400 ease-in-out space-y-4",
+          "fixed top-0 w-full px-4 z-50 flex justify-between md:justify-center md:flex-col items-center transition-all duration-400 ease-in-out space-y-4",
           transparent
             ? "bg-transparent py-5 gap-2.5"
             : "bg-white border-b border-black/10 py-5 gap-2.0"
@@ -41,34 +57,70 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             alt="WBT Garage"
             className="w-14 h-14 rounded-full object-cover transition-opacity duration-300 group-hover:opacity-70"
           />
-          {/* <span className={cn(
-            "font-serif text-xl font-bold tracking-widest transition-colors duration-300 group-hover:opacity-60",
-            transparent ? "text-white" : "text-black"
-          )}>
-            WBT GARAGE
-          </span> */}
         </Link>
 
-        <nav className="hidden md:flex items-center gap-2 text-xs uppercase tracking-widest">
-          {navLinks.map(([label, href]) => (
-            <Link
-              key={href}
-              href={href}
+        <div className="navigations">
+          <nav className="hidden md:flex items-center gap-2 text-xs uppercase tracking-widest">
+            {navLinks.map(([label, href]) => (
+              <Link
+                key={href}
+                href={href}
+                className={cn(
+                  "px-4 py-1.5 transition-all duration-300 text-lg font-medium",
+                  transparent
+                    ? location === href
+                      ? "text-white"
+                      : "text-white/40 border-white/20 hover:text-white"
+                    : location === href
+                      ? "text-black border-black/60"
+                      : "text-black/40 border-black/15 hover:text-black hover:border-black/40"
+                )}
+              >
+                {label}
+              </Link>
+            ))}
+          </nav>
+
+          {/* navigation for the mobile view with the same links with slider and hamburger menu */}
+          <div className="md:hidden">
+            <button
+              // change the hamburger color according to the header background
               className={cn(
-                "px-4 py-1.5 rounded-full border transition-all duration-300",
-                transparent
-                  ? location === href
-                    ? "text-white border-white/50"
-                    : "text-white/50 border-white/20 hover:text-white hover:border-white/50"
-                  : location === href
-                    ? "text-black border-black/60"
-                    : "text-black/40 border-black/15 hover:text-black hover:border-black/40"
+                "transition-colors duration-300",
+                transparent ? "text-white/60 hover:text-white" : "text-black/60 hover:text-black"
               )}
+              aria-label="Toggle navigation menu"
+              onClick={toggleMobileMenu}
             >
-              {label}
-            </Link>
-          ))}
-        </nav>
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+              </svg>
+            </button>
+          </div>
+
+          {/* mobile navigation menu */}
+          <div className="md:hidden"
+            style={{
+              // on visibility i just need a smooth visibility using the opacity and transition
+              visibility: isMobileMenuOpen ? "visible" : "hidden",
+              opacity: isMobileMenuOpen ? 1 : 0,
+              transition: "opacity 0.3s ease, visibility 0.3s ease",
+            }}
+          >
+            <nav className="absolute mobile-nav text-center top-full left-0 right-0 bg-white/90 backdrop-blur-sm border-t border-black/10 py-4">
+              {navLinks.map(([label, href]) => (
+                <Link
+                  key={href}
+                  href={href}
+                  className="block px-4 font-semibold text-xl py-2 text-black/60 hover:text-black transition-colors duration-300"
+                >
+                  {label}
+                </Link>
+              ))}
+            </nav>
+          </div>
+        </div>
+
       </header>
 
       <main className="flex-1">{children}</main>

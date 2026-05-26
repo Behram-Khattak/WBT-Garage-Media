@@ -48,7 +48,7 @@ export default function Gallery() {
   }, [lightbox]);
 
   return (
-    <div className="min-h-screen bg-background mt-6 pt-32 pb-24 px-4 md:px-8">
+    <div className="min-h-screen bg-background mt-6 pt-32 pb-24 px-4">
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 40 }}

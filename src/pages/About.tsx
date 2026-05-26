@@ -8,7 +8,7 @@ export default function About() {
   return (
     <div className="min-h-screen bg-background">
       {/* Hero */}
-      <section className="pt-40 pb-24 px-8 border-b border-white/5">
+      <section className="pt-40 pb-20 px-8 border-b border-white/5">
         <div className="max-w-5xl mx-auto">
           <motion.h1
             initial={{ opacity: 0, y: 40 }}
@@ -22,7 +22,7 @@ export default function About() {
       </section>
 
       {/* Content */}
-      <section className="py-24 px-8">
+      <section className="pb-24 px-8">
         <div className="max-w-5xl mx-auto flex flex-col md:flex-row gap-20">
           <div className="w-full md:w-1/3">
             <motion.div
@@ -50,18 +50,6 @@ export default function About() {
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
             >
-              <h3 className="font-serif text-4xl mb-8">Philosophy</h3>
-              <p className="text-lg md:text-xl text-foreground/80 leading-relaxed font-light">
-                WBT Garage is more than a collection of metal and rubber. It is an exploration of rare and collectible cars as emotional machines, cultural icons, and engineering masterpieces. Through access to private collections and cinematic storytelling, we document the soul of the automobile.
-              </p>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
-            >
               <div className="aspect-[4/3] w-full overflow-hidden mb-8">
                 <img
                   src={wbt_image_6}
@@ -69,6 +57,18 @@ export default function About() {
                   className="w-full h-full object-cover grayscale opacity-80 hover:grayscale-0 hover:opacity-100 transition-all duration-1000"
                 />
               </div>
+            </motion.div>
+            {/*  */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+            >
+              <h3 className="font-serif text-4xl mb-8">Philosophy</h3>
+              <p className="text-lg md:text-xl text-foreground/80 leading-relaxed font-light">
+                WBT Garage is more than a collection of metal and rubber. It is an exploration of rare and collectible cars as emotional machines, cultural icons, and engineering masterpieces. Through access to private collections and cinematic storytelling, we document the soul of the automobile.
+              </p>
             </motion.div>
 
             <motion.div
